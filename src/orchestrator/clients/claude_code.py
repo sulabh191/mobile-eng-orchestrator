@@ -39,7 +39,8 @@ class InstalledAsset:
 def _agent_markdown(name: str) -> str:
     spec = AGENT_REGISTRY[name]
     agent = spec.instantiate()
-    tools = "Bash, Read, Grep, Glob" if not agent.mutates_repository else "Bash, Read, Grep, Glob, Edit, Write"
+    read_only_tools = "Bash, Read, Grep, Glob"
+    tools = f"{read_only_tools}, Edit, Write" if agent.mutates_repository else read_only_tools
     return f"""---
 name: orc-{name}
 description: {agent.responsibility} Part of the engineering orchestrator pipeline (phase: {spec.phase}).

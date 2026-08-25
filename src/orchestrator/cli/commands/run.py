@@ -133,7 +133,9 @@ def status_command(
 @handle_errors
 def approve_command(
     run_id: Optional[str] = typer.Argument(None),
-    gate: Optional[str] = typer.Option(None, "--gate", help="Gate name (default: the one the run is waiting on)."),
+    gate: Optional[str] = typer.Option(
+        None, "--gate", help="Gate name (default: the one the run is waiting on)."
+    ),
     comment: Optional[str] = typer.Option(None, "--comment", "-m"),
     repo: Optional[Path] = typer.Option(None, "--repo", "-C"),
     then_resume: bool = typer.Option(True, "--resume/--no-resume", help="Continue the run afterwards."),

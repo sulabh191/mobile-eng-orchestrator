@@ -159,7 +159,11 @@ ISSUE_PAYLOAD = {
         "labels": ["mobile"],
         "components": [{"name": "Auth"}],
         "assignee": {"displayName": "Sam"},
-        "comment": {"comments": [{"author": {"displayName": "Priya"}, "body": {"type": "doc", "content": []}}]},
+        "comment": {
+            "comments": [
+                {"author": {"displayName": "Priya"}, "body": {"type": "doc", "content": []}}
+            ]
+        },
         "attachment": [],
         "subtasks": [],
     },
@@ -222,7 +226,10 @@ def test_bare_number_is_qualified_with_default_project(tmp_path):
     client = JiraClient(
         settings,
         credentials=store,
-        http_client=httpx.Client(transport=httpx.MockTransport(handler), base_url="https://example.atlassian.net"),
+        http_client=httpx.Client(
+            transport=httpx.MockTransport(handler),
+            base_url="https://example.atlassian.net",
+        ),
     )
     client.get_issue("42")
     assert any("MOB-42" in path for path in seen)

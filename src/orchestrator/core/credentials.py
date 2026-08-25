@@ -14,6 +14,7 @@ plausibly reach a log line.
 
 from __future__ import annotations
 
+import contextlib
 import os
 import stat
 from dataclasses import dataclass
@@ -135,10 +136,8 @@ class CredentialStore:
         backend = self._keyring()
         if backend is None:
             return
-        try:
+        with contextlib.suppress(Exception):  # pragma: no cover - locked/absent keychain
             backend.delete_password(KEYRING_SERVICE, key)  # type: ignore[attr-defined]
-        except Exception:  # pragma: no cover
-            pass
 
     def _dotenv_set(self, key: str, value: str) -> None:
         values = _load_env_file(self.env_file)

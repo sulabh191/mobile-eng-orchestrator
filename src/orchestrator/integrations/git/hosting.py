@@ -71,8 +71,17 @@ class NoopHost(PullRequestHost):
 
     provider = "none"
 
-    def create_pull_request(self, **_: object) -> str | None:
-        logger.info("No git host configured; skipping pull-request creation.")
+    def create_pull_request(
+        self,
+        *,
+        title: str,
+        body: str,
+        head: str,
+        base: str,
+        repo_path: str,
+        draft: bool = False,
+    ) -> str | None:
+        logger.info("No git host configured; skipping pull-request creation for %s.", head)
         return None
 
 

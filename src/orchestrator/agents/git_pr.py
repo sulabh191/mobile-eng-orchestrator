@@ -73,7 +73,11 @@ class DeliveryAgent(Agent):
         )
 
         if dry_run:
-            log.info("dry run: would create %s, commit, push to %s and open a PR", branch, settings.push_remote)
+            log.info(
+                "dry run: would create %s, commit, push to %s and open a PR",
+                branch,
+                settings.push_remote,
+            )
             ctx.audit(self.name, "delivery.dry_run", branch=branch, base=base)
             self.emit(ctx, result)
             ctx.blackboard["delivery"] = result

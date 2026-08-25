@@ -57,8 +57,11 @@ def make_ios_repo(root: Path) -> Path:
     project = repo / "IosApp.xcodeproj"
     (project / "xcshareddata" / "xcschemes").mkdir(parents=True)
     (project / "project.pbxproj").write_text("// pbxproj\n", encoding="utf-8")
-    (project / "xcshareddata" / "xcschemes" / "IosApp.xcscheme").write_text("<Scheme/>", encoding="utf-8")
-    (project / "xcshareddata" / "xcschemes" / "IosAppTests.xcscheme").write_text("<Scheme/>", encoding="utf-8")
+    (project / "xcshareddata" / "xcschemes" / "IosApp.xcscheme").write_text(
+        "<Scheme/>", encoding="utf-8"
+    )
+    schemes = project / "xcshareddata" / "xcschemes"
+    (schemes / "IosAppTests.xcscheme").write_text("<Scheme/>", encoding="utf-8")
     (repo / ".swiftlint.yml").write_text("disabled_rules: []\n", encoding="utf-8")
     sources = repo / "Sources"
     sources.mkdir()
@@ -86,7 +89,9 @@ def make_android_repo(root: Path) -> Path:
         'dependencies { implementation("androidx.compose.ui:ui") }\n',
         encoding="utf-8",
     )
-    (repo / "build.gradle.kts").write_text('plugins { id("io.gitlab.arturbosch.detekt") }\n', encoding="utf-8")
+    (repo / "build.gradle.kts").write_text(
+        'plugins { id("io.gitlab.arturbosch.detekt") }\n', encoding="utf-8"
+    )
     _git(repo, "add", "-A")
     _git(repo, "commit", "-m", "scaffold android project")
     return repo

@@ -10,6 +10,7 @@ which is what makes ``orc resume`` safe after a crash.
 
 from __future__ import annotations
 
+import contextlib
 import json
 import os
 import tempfile
@@ -399,13 +400,9 @@ class StateStore:
         """Keep orchestrator run state out of the target repository's commits."""
         exclude = self.repo_path / ".git" / "info" / "exclude"
         entry = f"/{STATE_DIRNAME}/"
-        try:
+        with contextlib.suppress(OSError):  # pragma: no cover - best effort only
             if exclude.parent.exists():
                 existing = exclude.read_text(encoding="utf-8") if exclude.exists() else ""
                 if entry not in existing:
                     with exclude.open("a", encoding="utf-8") as handle:
-                        handle.write(
-                            f"\n# added by mobile-eng-orchestrator\n{entry}\n"
-                        )
-        except OSError:  # pragma: no cover - best effort only
-            pass
+                        handle.write(f"\n# added by mobile-eng-orchestrator\n{entry}\n")

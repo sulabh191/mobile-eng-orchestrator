@@ -113,7 +113,12 @@ def android_checks(profile: RepoProfile, settings: Settings) -> list[Check]:
         Check(
             name="android:lockfile-untouched",
             description="gradle/libs.versions.toml parses (catalog not corrupted).",
-            command=["python3", "-c", "import sys,tomllib;tomllib.load(open(sys.argv[1],'rb'))", "gradle/libs.versions.toml"],
+            command=[
+                "python3",
+                "-c",
+                "import sys, tomllib; tomllib.load(open(sys.argv[1], 'rb'))",
+                "gradle/libs.versions.toml",
+            ],
             precondition=file_exists("gradle/libs.versions.toml"),
             category="deps",
             required=False,

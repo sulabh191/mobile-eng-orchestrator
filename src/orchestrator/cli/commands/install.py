@@ -28,7 +28,9 @@ def install(
     claude: bool = typer.Option(False, "--claude-code", help="Install Claude Code agents/skills/commands."),
     vscode: bool = typer.Option(False, "--vscode", help="Install VS Code tasks into the target repo."),
     repo: Optional[Path] = typer.Option(None, "--repo", "-C", help="Repository for VS Code tasks."),
-    target: Optional[Path] = typer.Option(None, "--claude-dir", help="Override the Claude Code config directory."),
+    target: Optional[Path] = typer.Option(
+        None, "--claude-dir", help="Override the Claude Code config directory."
+    ),
     dry_run: bool = typer.Option(False, "--dry-run", help="Show what would be written."),
 ) -> None:
     """Install client assets. With no flags, installs Claude Code assets."""

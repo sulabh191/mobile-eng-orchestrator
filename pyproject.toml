@@ -60,13 +60,24 @@ markers = [
 ]
 
 [tool.ruff]
-line-length = 100
+# 110 rather than 88/100: Typer option declarations and long help strings do not
+# wrap into anything more readable, and this keeps the limit meaningful instead
+# of silenced.
+line-length = 110
 target-version = "py311"
 src = ["src", "tests"]
 
 [tool.ruff.lint]
 select = ["E", "F", "I", "UP", "B", "SIM", "C4"]
-ignore = ["B008"]
+ignore = [
+  # Typer reads defaults from the signature, so `x: T = typer.Option(...)` is the
+  # documented usage, not a mutable-default bug.
+  "B008",
+  # Click/Typer resolve `Optional[T]` reliably across versions; the PEP 604 form
+  # is not equivalent for them, so the CLI keeps Optional deliberately.
+  "UP007",
+  "UP045",
+]
 
 [tool.mypy]
 python_version = "3.11"
