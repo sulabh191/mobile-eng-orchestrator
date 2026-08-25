@@ -51,9 +51,6 @@ Documentation = "https://github.com/your-org/engineering-orchestrator/tree/main/
 packages = ["src/orchestrator"]
 artifacts = ["src/orchestrator/py.typed"]
 
-[tool.hatch.build.targets.wheel.force-include]
-"assets" = "orchestrator/_assets"
-
 [tool.pytest.ini_options]
 minversion = "8.0"
 addopts = "-q --strict-markers"
