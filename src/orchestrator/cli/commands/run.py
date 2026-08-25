@@ -38,7 +38,7 @@ def run_command(
     non_interactive: bool = typer.Option(
         False, "--non-interactive", help="Stop at gates instead of prompting."
     ),
-    stop_after: str = typer.Option(
+    stop_after: Optional[str] = typer.Option(
         None, "--stop-after", help=f"Stop after a phase: {', '.join(STOP_POINTS)}."
     ),
     base: Optional[str] = typer.Option(None, "--base", help="Base branch for the pull request."),

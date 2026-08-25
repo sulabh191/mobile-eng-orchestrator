@@ -48,6 +48,12 @@ Engineering Orchestrator ──────────────────�
 
 ## Install
 
+**Prerequisites:** Python 3.11+, git, a Jira Cloud API token, and Claude Code (or the
+Claude Agent SDK). Platform checks additionally want Xcode on macOS for iOS, and a JDK
+plus the repository's own `./gradlew` for Android — missing tooling is reported as
+*skipped*, never silently passed. Full list in
+[docs/getting-started.md](docs/getting-started.md#1-prerequisites).
+
 ```bash
 git clone https://github.com/sulabh191/mobile-eng-orchestrator ~/.mobile-eng-orchestrator
 ~/.mobile-eng-orchestrator/scripts/install.sh
@@ -66,7 +72,9 @@ orc doctor                      # verify everything is wired up
 
 ## Use
 
-From inside any iOS or Android checkout:
+From inside any iOS or Android checkout — see
+[getting-started.md](docs/getting-started.md#6-your-first-real-run) for a walkthrough of
+what happens at each step:
 
 ```bash
 orc run MOB-123                 # the full workflow, with gates
@@ -155,6 +163,8 @@ service, a web app — runs as `generic`: guard checks plus whatever you configu
 
 | Document | Contents |
 | --- | --- |
+| [docs/getting-started.md](docs/getting-started.md) | **Start here** — prerequisites, install, configure, first run, team rollout, CI |
+| [docs/cli-reference.md](docs/cli-reference.md) | Every command, flag, exit code, environment variable and file it touches |
 | [docs/architecture.md](docs/architecture.md) | Layers, data flow, why the boundaries sit where they do |
 | [docs/workflow.md](docs/workflow.md) | States, transitions, gates, resume and remediation |
 | [docs/agents.md](docs/agents.md) | Each agent's contract and prompt inputs |
