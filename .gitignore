@@ -14,3 +14,4 @@ venv/
 htmlcov/
 # Orchestrator run state written into target repositories
 .orchestrator/
+.DS_Store
