@@ -1,0 +1,11 @@
+{
+  "key": "MOB-201",
+  "summary": "Persist the selected store between launches",
+  "description": "Selecting a store is lost on cold start.\n\nAcceptance criteria:\n- The selected store survives an app restart\n- Clearing app data resets the selection\n- No additional network call is made on launch\n",
+  "issue_type": "Story",
+  "status": "Ready for Development",
+  "priority": "Medium",
+  "labels": ["mobile"],
+  "components": ["Store Picker"],
+  "url": "https://example.atlassian.net/browse/MOB-201"
+}

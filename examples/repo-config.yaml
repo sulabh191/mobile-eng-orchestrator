@@ -1,0 +1,39 @@
+# Copy to <your-app-repo>/.orchestrator/config.yaml and commit it.
+# Everything here is optional; unset keys fall back to the global config.
+
+git:
+  default_base_branch: develop
+  protected_branches: [develop, main, "release/*"]
+  branch_template: "{prefix}/{issue_key_lower}-{slug}"
+
+validation:
+  # Fail as early as possible on a large project.
+  fail_fast: true
+  max_remediation_attempts: 2
+
+  ios:
+    scheme: Shopping
+    test_scheme: ShoppingUnitTests
+    destination: "generic/platform=iOS Simulator"
+    test_destination: "platform=iOS Simulator,name=iPhone 15"
+
+  android:
+    assemble_task: assembleDebug
+    test_task: testDebugUnitTest
+
+  extra_checks:
+    - name: custom:api-contract
+      description: Generated API models match the published contract.
+      command: ["./scripts/check-api-contract.sh"]
+      required: true
+      timeout: 300
+
+behaviour:
+  # This codebase prefers small, reviewable changes.
+  max_touched_files: 25
+  protected_paths:
+    - ".git/"
+    - ".orchestrator/"
+    - "**/*.keystore"
+    - "**/GoogleService-Info.plist"
+    - "fastlane/**"
