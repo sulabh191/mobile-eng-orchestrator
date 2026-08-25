@@ -46,7 +46,7 @@ app.add_typer(install_cmd.app, name="install")
 @app.command("version")
 def version() -> None:
     """Print the orchestrator version."""
-    console.print(f"engineering-orchestrator {__version__}")
+    console.print(f"mobile-eng-orchestrator {__version__}")
 
 
 def main() -> None:

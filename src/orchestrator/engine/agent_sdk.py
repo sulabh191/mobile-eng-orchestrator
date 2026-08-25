@@ -3,7 +3,7 @@
 Selected with ``engine.backend = agent_sdk``. Runs the same bounded tasks as the
 Claude Code backend but in-process, which is the better fit for CI where the
 ``claude`` CLI may not be installed. The SDK is an optional dependency:
-``pip install 'engineering-orchestrator[sdk]'``.
+``pip install 'mobile-eng-orchestrator[sdk]'``.
 """
 
 from __future__ import annotations
@@ -34,7 +34,7 @@ class AgentSDKEngine(Engine):
         except ImportError:
             return False, (
                 "claude-agent-sdk is not installed. "
-                "Install with `pip install 'engineering-orchestrator[sdk]'`."
+                "Install with `pip install 'mobile-eng-orchestrator[sdk]'`."
             )
         return True, "claude-agent-sdk importable"
 

@@ -2,8 +2,8 @@
 #
 # One-shot installer for the Engineering Orchestrator.
 #
-#   git clone https://github.com/your-org/engineering-orchestrator ~/.engineering-orchestrator
-#   ~/.engineering-orchestrator/scripts/install.sh
+#   git clone https://github.com/sulabh191/mobile-eng-orchestrator ~/.mobile-eng-orchestrator
+#   ~/.mobile-eng-orchestrator/scripts/install.sh
 #
 # Installs the `orc` CLI globally (pipx when available, otherwise pip --user),
 # then registers agents, skills and slash commands with Claude Code.

@@ -5,7 +5,7 @@
 Highest precedence wins:
 
 ```
-command-line flags  >  ORC_* environment  >  <repo>/.orchestrator/config.yaml  >  ~/.config/engineering-orchestrator/config.yaml  >  defaults
+command-line flags  >  ORC_* environment  >  <repo>/.orchestrator/config.yaml  >  ~/.config/mobile-eng-orchestrator/config.yaml  >  defaults
 ```
 
 Merging is deep, so a repository can override one key without restating a section.
@@ -17,9 +17,9 @@ Secrets are never part of this file. See [security.md](security.md).
 
 | What | Where |
 | --- | --- |
-| Global config | `~/.config/engineering-orchestrator/config.yaml` (`orc config path`) |
-| Secrets | OS keychain, or `~/.config/engineering-orchestrator/.env` (mode 0600) |
-| User skills | `~/.config/engineering-orchestrator/skills/*.md` |
+| Global config | `~/.config/mobile-eng-orchestrator/config.yaml` (`orc config path`) |
+| Secrets | OS keychain, or `~/.config/mobile-eng-orchestrator/.env` (mode 0600) |
+| User skills | `~/.config/mobile-eng-orchestrator/skills/*.md` |
 | Per-repo config | `<repo>/.orchestrator/config.yaml` |
 | Per-repo skills | `<repo>/.orchestrator/skills/*.md` |
 | Run state | `<repo>/.orchestrator/runs/<run-id>/` |

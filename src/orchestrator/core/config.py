@@ -23,7 +23,7 @@ from orchestrator.core.credentials import CredentialStore
 from orchestrator.core.errors import ConfigurationError
 from orchestrator.core.models import StrictModel
 
-APP_NAME = "engineering-orchestrator"
+APP_NAME = "mobile-eng-orchestrator"
 CONFIG_FILENAME = "config.yaml"
 REPO_CONFIG_RELPATH = Path(".orchestrator") / "config.yaml"
 

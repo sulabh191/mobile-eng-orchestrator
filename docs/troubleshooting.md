@@ -67,7 +67,7 @@ the run's `review.md` contains the drafted title and body.
 
 The `claude_code` backend needs Claude Code installed and on PATH. Alternatives:
 `engine.claude_binary` to point at it, `--engine agent_sdk` with
-`pip install 'engineering-orchestrator[sdk]'`, or `--engine mock --offline` to rehearse the
+`pip install 'mobile-eng-orchestrator[sdk]'`, or `--engine mock --offline` to rehearse the
 workflow without a model. `orc engines` shows what is usable.
 
 ## Runs are cluttering my repository

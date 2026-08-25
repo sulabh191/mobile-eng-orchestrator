@@ -3,7 +3,7 @@ requires = ["hatchling>=1.21"]
 build-backend = "hatchling.build"
 
 [project]
-name = "engineering-orchestrator"
+name = "mobile-eng-orchestrator"
 version = "0.1.0"
 description = "Cross-platform AI engineering orchestration framework for iOS, Android and beyond."
 readme = "README.md"
@@ -41,11 +41,11 @@ dev = [
 
 [project.scripts]
 orc = "orchestrator.cli.app:main"
-engineering-orchestrator = "orchestrator.cli.app:main"
+mobile-eng-orchestrator = "orchestrator.cli.app:main"
 
 [project.urls]
-Homepage = "https://github.com/your-org/engineering-orchestrator"
-Documentation = "https://github.com/your-org/engineering-orchestrator/tree/main/docs"
+Homepage = "https://github.com/sulabh191/mobile-eng-orchestrator"
+Documentation = "https://github.com/sulabh191/mobile-eng-orchestrator/tree/main/docs"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/orchestrator"]

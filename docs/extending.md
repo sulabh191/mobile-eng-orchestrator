@@ -5,7 +5,7 @@ Four of the five common extensions need no Python at all.
 ## Add a skill (no code)
 
 Drop a markdown file into `<repo>/.orchestrator/skills/` (team-wide, committed) or
-`~/.config/engineering-orchestrator/skills/` (yours only):
+`~/.config/mobile-eng-orchestrator/skills/` (yours only):
 
 ```markdown
 ---

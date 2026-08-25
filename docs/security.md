@@ -13,7 +13,7 @@ Resolution order, highest first:
 1. **Environment** (`ORC_*`) — for CI.
 2. **OS keychain** via `keyring` (macOS Keychain, libsecret, Windows Credential Manager) —
    the recommended place for a laptop; `orc config set-secret` writes here.
-3. **Dotenv** at `~/.config/engineering-orchestrator/.env`, created with mode `0600` —
+3. **Dotenv** at `~/.config/mobile-eng-orchestrator/.env`, created with mode `0600` —
    the fallback when no keyring backend exists.
 
 Guarantees:

@@ -74,7 +74,7 @@ class JiraClient:
             headers={
                 "Accept": "application/json",
                 "Content-Type": "application/json",
-                "User-Agent": "engineering-orchestrator/0.1",
+                "User-Agent": "mobile-eng-orchestrator/0.1",
             },
         )
         self._field_cache: dict[str, str] | None = None

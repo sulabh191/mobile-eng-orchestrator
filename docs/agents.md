@@ -89,7 +89,7 @@ the task payload. Skills are markdown files with frontmatter (`name`, `descripti
 `applies_to`, `tags`) loaded from three places, later winning on name collision:
 
 1. the built-in library shipped with the orchestrator,
-2. `~/.config/engineering-orchestrator/skills/`,
+2. `~/.config/mobile-eng-orchestrator/skills/`,
 3. `<repo>/.orchestrator/skills/`.
 
 So a team encodes its own conventions by dropping a file into the repository — no fork, no

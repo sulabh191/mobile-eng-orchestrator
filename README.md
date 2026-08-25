@@ -49,8 +49,8 @@ Engineering Orchestrator ──────────────────�
 ## Install
 
 ```bash
-git clone https://github.com/your-org/engineering-orchestrator ~/.engineering-orchestrator
-~/.engineering-orchestrator/scripts/install.sh
+git clone https://github.com/sulabh191/mobile-eng-orchestrator ~/.mobile-eng-orchestrator
+~/.mobile-eng-orchestrator/scripts/install.sh
 ```
 
 The installer puts the `orc` command on your PATH (via pipx when available), creates the

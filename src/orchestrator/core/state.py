@@ -405,7 +405,7 @@ class StateStore:
                 if entry not in existing:
                     with exclude.open("a", encoding="utf-8") as handle:
                         handle.write(
-                            f"\n# added by engineering-orchestrator\n{entry}\n"
+                            f"\n# added by mobile-eng-orchestrator\n{entry}\n"
                         )
         except OSError:  # pragma: no cover - best effort only
             pass

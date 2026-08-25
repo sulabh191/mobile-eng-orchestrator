@@ -100,7 +100,7 @@ error.
 The registry, the skill library, the check plan and the platform specialists are all data
 rather than control flow:
 
-- a new **skill** is a markdown file in `~/.config/engineering-orchestrator/skills/` or
+- a new **skill** is a markdown file in `~/.config/mobile-eng-orchestrator/skills/` or
   `<repo>/.orchestrator/skills/`;
 - a new **check** is an entry in `validation.extra_checks` or a `Check` in a platform
   module;

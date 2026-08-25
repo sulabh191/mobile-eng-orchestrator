@@ -21,7 +21,7 @@ from pathlib import Path
 
 from orchestrator.core.errors import CredentialError
 
-KEYRING_SERVICE = "engineering-orchestrator"
+KEYRING_SERVICE = "mobile-eng-orchestrator"
 ENV_PREFIX = "ORC_"
 
 
